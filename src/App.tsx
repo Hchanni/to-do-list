@@ -3,7 +3,7 @@ import './App.css';
 import InputField from './components/InputField';
 import { useState } from 'react';
 import { Todo } from './model';
-import { isDefaultClause } from 'typescript';
+import { TodoList } from './components/TodoList';
 
 // Functional Component (FC)
 const App:React.FC = () =>{
@@ -25,7 +25,7 @@ const App:React.FC = () =>{
       <span className='heading'>Taskify</span>
       
     <InputField todo= {todo} settodo={setTodo} handleadd = {handleAdd}/>
-
+    <TodoList todos ={todos} setTodos={setTodos}/>
 
     </div>
   );
