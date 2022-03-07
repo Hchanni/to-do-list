@@ -3,12 +3,14 @@ import './styles.css'
 
 interface Props {
     todo:string;
-    settodo: React.Dispatch<React.SetStateAction<string>>; 
+    settodo: React.Dispatch<React.SetStateAction<string>>;
+    handleadd: (e: React.FormEvent) => void;
+    
 }
 
-const InputField: React.FC<Props> = ({ todo, settodo }) => {
+const InputField: React.FC<Props> = ({ todo, settodo, handleadd}) => {
   return (
-    <form className='input'>
+    <form className='input' onSubmit={handleadd}>
         <input type="input"
         value = {todo}
         onChange = {
